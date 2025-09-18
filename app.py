@@ -23,6 +23,12 @@ with col2:
     transmission = st.selectbox("Transmission", ["Manual", "Automatic"])
     owner = st.selectbox("Owner Type", ["First Owner", "Second Owner", "Third Owner", "Fourth & Above Owner", "Test Drive Car"])
 
+# Normalize categorical inputs to match training data format
+fuel = fuel.strip().title()
+seller_type = seller_type.strip().title()
+transmission = transmission.strip().title()
+owner = owner.strip().title()
+
 # Feature Engineering
 car_age = 2025 - year
 
@@ -38,7 +44,7 @@ input_dict = {
 
 base_features = ["km_driven", "car_age"]
 cat_features = [
-    "fuel_Petrol", "fuel_Diesel", "fuel_CNG", "fuel_LPG", "fuel_Electric",
+    "fuel_Petrol", "fuel_Diesel", "fuel_Cng", "fuel_Lpg", "fuel_Electric",
     "seller_type_Individual", "seller_type_Dealer", "seller_type_Trustmark Dealer",
     "transmission_Manual", "transmission_Automatic",
     "owner_First Owner", "owner_Second Owner", "owner_Third Owner",
