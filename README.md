@@ -104,9 +104,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions or collaboration, please contact:
 
 👤 **Developer Name**  
-📧 email@example.com  
-🔗 [LinkedIn Profile](https://linkedin.com/in/developer)  
-🐦 [Twitter Handle](https://twitter.com/developer)
+📧 sriram.tsbuss@gmail.com  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/sriram-ts-73030614/)  
 
 ---
 
