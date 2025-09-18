@@ -44,12 +44,13 @@ input_dict = {
 
 base_features = ["km_driven", "car_age"]
 cat_features = [
-    "fuel_Petrol", "fuel_Diesel", "fuel_Cng", "fuel_Lpg", "fuel_Electric",
-    "seller_type_Individual", "seller_type_Dealer", "seller_type_Trustmark Dealer",
-    "transmission_Manual", "transmission_Automatic",
-    "owner_First Owner", "owner_Second Owner", "owner_Third Owner",
-    "owner_Fourth & Above Owner", "owner_Test Drive Car"
+    "fuel_Cng", "fuel_Diesel",  "fuel_Electric", "fuel_Lpg", "fuel_Petrol", 
+    "seller_type_Dealer", "seller_type_Individual", "seller_type_Trustmark Dealer",
+    "transmission_Automatic","transmission_Manual",
+    "owner_First Owner", "owner_Fourth & Above Owner", "owner_Second Owner",
+    "owner_Test Drive Car", "owner_Third Owner"
 ]
+
 
 # Initialize all features with zeros and update with input
 full_input = {}
