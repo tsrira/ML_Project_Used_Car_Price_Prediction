@@ -65,6 +65,13 @@ if "selling_price" in X_input.columns:
 # Scale numerical features
 X_input[base_features] = scaler.transform(X_input[base_features])
 
+st.write("Input feature columns")
+st.write(list(X_input.columns))
+
+model_feature_names = getattr(model, 'feature_names_in_', None)
+st.write("Model expected feature columns")
+st.write(model_feature_names)
+
 # Predict on button click
 if st.button("Predict Selling Price"):
     y_pred = model.predict(X_input)[0]
