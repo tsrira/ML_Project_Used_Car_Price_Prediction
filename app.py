@@ -9,7 +9,7 @@ with open("gb_model.pkl", "rb") as f:
 with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
-st.title("🚗 Used Car Price Prediction")
+st.title("🚙📈 Used Car Price Prediction")
 
 # Input fields
 col1, col2 = st.columns(2)
@@ -89,3 +89,4 @@ if st.button("Predict Selling Price"):
 
 st.markdown("---")
 st.markdown("Model: Gradient Boosting Regressor | Dataset: CAR-DEKHO")
+
