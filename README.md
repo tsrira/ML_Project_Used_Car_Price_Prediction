@@ -36,8 +36,8 @@ The Streamlit app is [Used Car Prediction](https://ml-used-car-price-prediction.
 
 **Screen Capture**
 <img width="456" height="362" alt="image" src="https://github.com/user-attachments/assets/08191dd6-a0ce-4ce6-b5b8-7605fb04a922" />
-<img width="982" height="718" alt="image" src="https://github.com/user-attachments/assets/0940f546-a157-4738-bdbb-cfe50f221d1c" />
-<img width="1005" height="721" alt="image" src="https://github.com/user-attachments/assets/49b4983f-85be-4992-bef5-468dc01b24be" />
+<img width="456" height="362" alt="image" src="https://github.com/user-attachments/assets/0940f546-a157-4738-bdbb-cfe50f221d1c" />
+<img width="456" height="362" alt="image" src="https://github.com/user-attachments/assets/49b4983f-85be-4992-bef5-468dc01b24be" />
 
 
 ---
