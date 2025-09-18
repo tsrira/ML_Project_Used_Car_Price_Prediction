@@ -30,7 +30,9 @@ The model considers features such as:
 - 📊 Clean, easy-to-understand UI with meaningful outputs  
 
 ---
+## Demo
 
+The Streamlit app is [Used Car Prediction](https://ml-used-car-price-prediction.streamlit.app/)
 ---
 
 ## 📁 File Structure
