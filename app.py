@@ -66,12 +66,12 @@ if "selling_price" in X_input.columns:
 # Scale numerical features
 X_input[base_features] = scaler.transform(X_input[base_features])
 
-st.write("Input feature columns")
-st.write(list(X_input.columns))
+#st.write("Input feature columns")
+#st.write(list(X_input.columns))
 
-model_feature_names = getattr(model, 'feature_names_in_', None)
-st.write("Model expected feature columns")
-st.write(model_feature_names)
+#model_feature_names = getattr(model, 'feature_names_in_', None)
+#st.write("Model expected feature columns")
+#st.write(model_feature_names)
 
 # Predict on button click
 if st.button("Predict Selling Price"):
@@ -80,3 +80,4 @@ if st.button("Predict Selling Price"):
 
 st.markdown("---")
 st.markdown("Model: Gradient Boosting Regressor | Dataset: CAR-DEKHO")
+
