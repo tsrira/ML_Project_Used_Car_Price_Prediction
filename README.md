@@ -35,11 +35,17 @@ The model considers features such as:
 
 ## 📁 File Structure
 
+
 ├── app.py # Streamlit app script
+
 ├── gb_model.pkl # Trained Gradient Boosting model
+
 ├── scaler.pkl # Feature scaler
+
 ├── requirements.txt # Python dependencies
+
 ├── README.md # Project description and instructions
+
 └── data/ # (Optional) Dataset or other supporting files
 
 
