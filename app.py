@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.preprocessing import StandardScaler
 
 # Load pre-trained Gradient Boosting model and scaler
 with open("gb_model.pkl", "rb") as f:
@@ -28,7 +26,7 @@ with col2:
 # Feature Engineering
 car_age = 2025 - year
 
-# Prepare input features with correct names to match training
+# Prepare input features to match training columns exactly
 input_dict = {
     "km_driven": km_driven,
     "car_age": car_age,
@@ -38,26 +36,30 @@ input_dict = {
     "owner_" + owner: 1
 }
 
-# List of features used in training (categorized)
 base_features = ["km_driven", "car_age"]
 cat_features = [
     "fuel_Petrol", "fuel_Diesel", "fuel_CNG", "fuel_LPG", "fuel_Electric",
     "seller_type_Individual", "seller_type_Dealer", "seller_type_Trustmark Dealer",
     "transmission_Manual", "transmission_Automatic",
-    "owner_First Owner", "owner_Second Owner", "owner_Third Owner", "owner_Fourth & Above Owner", "owner_Test Drive Car"
+    "owner_First Owner", "owner_Second Owner", "owner_Third Owner",
+    "owner_Fourth & Above Owner", "owner_Test Drive Car"
 ]
 
-# Initialize all features with zero
+# Initialize all features with zeros and update with input
 full_input = {}
 for col in base_features + cat_features:
     full_input[col] = input_dict.get(col, 0)
 
 X_input = pd.DataFrame([full_input])
 
-# Scale numeric features with the loaded scaler
+# Remove selling_price if it exists in input dataframe (to avoid mismatch)
+if "selling_price" in X_input.columns:
+    X_input = X_input.drop(columns=["selling_price"])
+
+# Scale numerical features
 X_input[base_features] = scaler.transform(X_input[base_features])
 
-# Predict and display price on button click
+# Predict on button click
 if st.button("Predict Selling Price"):
     y_pred = model.predict(X_input)[0]
     st.success(f"Predicted Selling Price: ₹ {int(y_pred)}")
