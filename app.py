@@ -42,8 +42,17 @@ input_dict = {
     "owner_" + owner: 1
 }
 
+model_feature_names = getattr(model, 'feature_names_in_', None)
+
+# Define base (numerical) features
 base_features = ["km_driven", "car_age"]
-cat_features = [
+
+# Backfill cat_features from model features by excluding base_features
+if model_feature_names is not None:
+    cat_features = [feat for feat in model_feature_names if feat not in base_features]
+else:
+    # fallback to empty or hardcoded list if needed
+    cat_features = [
     "fuel_Cng", "fuel_Diesel",  "fuel_Electric", "fuel_Lpg", "fuel_Petrol", 
     "seller_type_Dealer", "seller_type_Individual", "seller_type_Trustmark Dealer",
     "transmission_Automatic","transmission_Manual",
@@ -66,12 +75,12 @@ if "selling_price" in X_input.columns:
 # Scale numerical features
 X_input[base_features] = scaler.transform(X_input[base_features])
 
-#st.write("Input feature columns")
-#st.write(list(X_input.columns))
+# st.write("Input feature columns")
+# st.write(list(X_input.columns))
 
-#model_feature_names = getattr(model, 'feature_names_in_', None)
-#st.write("Model expected feature columns")
-#st.write(model_feature_names)
+# model_feature_names = getattr(model, 'feature_names_in_', None)
+# st.write("Model expected feature columns")
+# st.write(model_feature_names)
 
 # Predict on button click
 if st.button("Predict Selling Price"):
@@ -80,4 +89,3 @@ if st.button("Predict Selling Price"):
 
 st.markdown("---")
 st.markdown("Model: Gradient Boosting Regressor | Dataset: CAR-DEKHO")
-
