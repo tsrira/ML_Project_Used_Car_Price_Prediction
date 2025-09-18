@@ -1,4 +1,4 @@
-# 🚗💎 Used Car Price Prediction App
+# 🚗₹✨ Used Car Price Prediction App
 
 [![Streamlit](https://img.shields.io/badge/streamlit-powered-green)](https://streamlit.io/)  
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)  
